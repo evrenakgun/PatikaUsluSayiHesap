@@ -4,21 +4,32 @@ import java.util.Scanner;
 
 public class UsluSayiHesap {
 	public static void main(String[] args) {
-		//@author: Evren Akgün
-		
+		// @author: Evren Akgün
+
 		Scanner input = new Scanner(System.in);
 		int a, b;
-		
+
 		System.out.print("Taban sayiyi giriniz: ");
 		a = input.nextInt();
 		System.out.print("Ussunu giriniz: ");
 		b = input.nextInt();
-		int toplam = 1;
-		
-		for (int i = 1; i <= b; i++) {
-			toplam *= a;
+		int toplamPozitif = 1;
+		double toplamNegatif = 1;
+
+		if (b >= 0) {
+
+			for (int i = 1; i <= b; i++) {
+				toplamPozitif *= a;
+			}
+			System.out.println("Sonuc: " + toplamPozitif);
 		}
-		System.out.println("Sonuc: " + toplam);
-		
+
+		else if (b < 0) {
+			for (int i = -1; i >= b; i--) {
+				toplamNegatif *= a;
+			}
+			System.out.println("Sonuc: " + (1 / toplamNegatif));
+		}
+
 	}
 }
